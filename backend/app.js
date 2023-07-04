@@ -3,11 +3,13 @@ const cookieParser = require('cookie-parser');
 const app=express();
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
-const dotenv = require("dotenv");
+
 
 
 const errorMiddleware = require("./middleware/error");
-dotenv.config({path: "./config/.env"});
+if(process.env.NODE_ENV !== "PRODUCTION"){
+    require("dotenv").config({path:"config/.env"});
+}
 
 app.use(express.json({limit: '80mb'}));
 app.use(bodyParser.urlencoded({
