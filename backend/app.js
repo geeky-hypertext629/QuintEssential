@@ -4,7 +4,7 @@ const app=express();
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
-const path = require("path")
+
 
 const errorMiddleware = require("./middleware/error");
 dotenv.config({path: "./config/.env"});
@@ -27,7 +27,7 @@ const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRoute");
 
 // Middleware for error
-app.use(express.static(this.path));
+
 app.use(errorMiddleware);
 
 app.use("/api/v1",product);
