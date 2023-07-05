@@ -10,11 +10,12 @@ import MetaData from "../layout/MetaData";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Sidebar from './Sidebar';
-import { DELETE_PRODUCT_RESET } from '../../actions/constants/productConstants';
+// import { DELETE_PRODUCT_RESET } from '../../actions/constants/productConstants';
+
 import { deleteUser, getAllUsers } from '../../actions/userAction';
 import { DELETE_USER_RESET } from '../../actions/constants/userConstants';
 // import { Navigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 const UsersList = () => {
 
@@ -22,8 +23,7 @@ const UsersList = () => {
   const alert = useAlert();
   const { error, users} = useSelector((state) => state.allUsers);
   const navigate = useNavigate(); 
-  const params = useParams();
-  const {id} = useParams();
+
 
   const { error : deleteError,isDeleted,message} = useSelector((state)=>state.profile)
 

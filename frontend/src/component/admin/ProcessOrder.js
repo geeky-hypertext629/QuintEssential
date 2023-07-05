@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import MetaData from '../layout/MetaData';
 import { Link } from "react-router-dom";
 import { Typography } from '@material-ui/core';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Sidebar from './Sidebar';
 // import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import { useParams } from 'react-router-dom';
@@ -24,7 +24,7 @@ const ProcessOrder = () => {
 
         const {order,error,loading} = useSelector((state)=>state.orderDetails);
         const {error : updateError,isUpdated} = useSelector((state)=>state.order);
-        const navigate = useNavigate();
+        // const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const {id} = useParams();

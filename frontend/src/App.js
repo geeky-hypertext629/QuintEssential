@@ -38,7 +38,7 @@ import ProcessOrder from "./component/admin/ProcessOrder.js"
 import UsersList from './component/admin/UsersList';
 import UpdateUser from './component/admin/UpdateUser';
 import ProductReviews from './component/admin/ProductReviews';
-import NotFound from './component/layout/Not Found/NotFound';
+// import NotFound from './component/layout/Not Found/NotFound';
 
 
 
@@ -50,9 +50,15 @@ const App = () => {
 
   const [stripeApiKey, setStripeApiKey] = useState("");
   async function getStripeApiKey() {
+    try{
     const { data } = await axios.get("/api/v1/stripeapikey");
 
     setStripeApiKey(data.stripeApiKey);
+    }
+    catch(error)
+    {
+      console.log(error)
+    }
 
   }
 
@@ -120,7 +126,7 @@ const App = () => {
 
 
         <Route exact path="/admin/reviews" element={<ProtectedRoute isAdmin={true} element={<ProductReviews/>} />} />
-        <Route path="*" element={<NotFound />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
         {/* <Elements stripe={loadStripe(stripeApiKey)}>
 
         <Route exact path="/process/payment" element={<ProtectedRoute element={<Payment />} />} />

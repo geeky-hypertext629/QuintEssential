@@ -5,10 +5,10 @@ const cloudinary = require('cloudinary');
 const connectDatabase = require('./config/database')
 //Config
 
-if(process.env.NODE_ENV!=="PRODUCTION"){
+// if(process.env.NODE_ENV!=="PRODUCTION"){
 
     dotenv.config({path: "./config/.env"});
-}
+// }
 
 
 //Connecting to Database
